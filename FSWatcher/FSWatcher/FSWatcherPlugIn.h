@@ -12,11 +12,17 @@
 
 @interface FSWatcherPlugIn : QCPlugIn
 
++ (NSMutableArray *)scanDirectory:(NSString *)dir;
+
 @property NSString* inputDirectoryLocation;
 @property BOOL outputUpdateSignal;
+@property(copy) NSString* outputAddedImage;
 
 @property FSEventStreamRef stream;
 @property BOOL eventOccured;
 @property BOOL eventStreamCreated;
+
+@property NSMutableArray* imagesAdded;
+@property NSMutableArray* images;
 
 @end
