@@ -51,7 +51,7 @@ void callbackFunction(ConstFSEventStreamRef streamRef, void *clientCallBackInfo,
 {
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSArray *files = [fileManager contentsOfDirectoryAtPath:dir error:nil];
-    NSArray *extensions = @[@"jpg", @"JPG", @"jpeg", @"JPEG"];
+    NSArray *extensions = @[@"jpg", @"JPG", @"jpeg", @"JPEG", @"png", @"PNG"];
     NSPredicate *filter = [NSPredicate predicateWithFormat:@"pathExtension IN %@", extensions];
     
     return [NSMutableArray arrayWithArray:[files filteredArrayUsingPredicate:filter]];
