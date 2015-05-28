@@ -157,7 +157,9 @@ void callbackFunction(ConstFSEventStreamRef streamRef, void *clientCallBackInfo,
         if(self.imagesAdded.count > 0) {
             NSURL *url = [NSURL URLWithString:self.inputDirectoryLocation.stringByStandardizingPath];
             
-            self.outputAddedImage = [url URLByAppendingPathComponent:[self.imagesAdded lastObject]].path;
+            NSString* path = [url URLByAppendingPathComponent:[self.imagesAdded lastObject]].path;
+            NSLog(@"Setting added image to %@", path);
+            self.outputAddedImage = path;
         }
     }
     
